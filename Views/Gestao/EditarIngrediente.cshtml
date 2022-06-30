@@ -1,0 +1,11 @@
+@model ReceitasMvc.DTO.IngredienteDTO
+
+<h3>Atualizar Ingrediente</h3>
+<hr>
+<form class="form-horizontal" asp-controller="Ingredientes" asp-action="Atualizar" method="POST">
+    <input type="hidden" asp-for="Id">
+    <label asp-for="Nome">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome do Ingrediente"><br>
+    <span asp-validation-for="Nome"></span>
+    <button class="btn btn-success">Atualizar</button>
+</form>

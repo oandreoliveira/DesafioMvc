@@ -1,0 +1,119 @@
+@model List<ReceitasMvc.Models.InsumoReceita>
+@{
+    Layout = "_Layout";
+}
+
+@* <hr />
+    <a asp-action="NovaReceita" asp-controller="Gestao" class="btn btn-success">Criar nova Receita</a>
+    <hr /> model uma lista com *@
+
+
+
+
+<h1>
+    <center>@Model[0].Receita.Nome
+</h1><br>
+<br>
+
+
+<div class="fotoReceita" ;>
+    <h1>
+        <center><img src="@Model[0].Receita.Foto" width=500 height=300>
+    </h1>
+</div>
+<br>
+
+<style>
+    .row {
+        display: flex;
+        justify-content: center;
+
+    }
+</style>
+<center>
+    <div class='row'>
+
+        <div class='col-3'>
+
+            <div class="card-header">
+                Categoria
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Model[0].Receita.Categoria.Nome</li>
+
+            </ul>
+
+        </div>
+
+        <div class='col-3'>
+
+            <div class="card-header">
+                Tempo de Preparo
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Model[0].Receita.TempoDePreparo minutos</li>
+
+            </ul>
+
+        </div>
+
+        <div class='col-3'>
+
+            <div class="card-header">
+                Rende
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Model[0].Receita.Porcao Porções</li>
+
+            </ul>
+
+        </div>
+</center>
+
+
+
+<div>
+
+
+
+    </center>
+    <br>
+    <br>
+
+    <h3>
+        <center>Modo de Preparo
+    </h3><br>
+
+
+    <ul>
+        <center>@Model[0].Receita.ModoDePreparo</center>
+    </ul>
+
+
+
+    <h3>
+        <center>Lista de Ingredientes
+    </h3><br>
+    <table id="detail" class="table table-striped table-bordered" width="467">
+        <thead>
+            <tr>
+                <th>Quantidade</th>
+                <th>Unidade de Medida</th>
+                <th>Ingredientes</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Quantidade</td>
+                    <td>@item.Medida.Nome</td>
+                    <td>@item.Ingrediente.Nome</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+@model ReceitasMvc.DTO.MedidaDTO
+
+@{
+    Layout = "_LayoutAdmin";
+}
+<h3>Nova Unidade de Medida</h3>
+<hr>
+<form class="form-horizontal" asp-controller="Medidas" asp-action="Salvar" method="POST">
+    <input type="hidden" asp-for="Id" value="0">
+    <label asp-for="Nome">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome da unidade de medida"><br>
+    <span asp-validation-for="Nome"></span>
+    <button class="btn btn-success">Cadastrar</button>
+</form>

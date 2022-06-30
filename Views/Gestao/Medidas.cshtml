@@ -1,0 +1,59 @@
+@model IEnumerable<ReceitasMvc.Models.Medida>
+@{
+    Layout = "_LayoutAdmin";
+}
+<h2>Unidade de Medidas</h2>
+<hr />
+<a asp-action="NovaMedida" asp-controller="Gestao" class="btn btn-success">Criar nova Unidade de medida</a>
+<hr />
+
+<script>
+    $(document).ready(function () {
+        $('#medidas').DataTable({
+            //"info" : false, 
+            "language": {
+                "lengthMenu": "Exibindo _MENU_ registros por página",
+                "zeroRecords": "Desculpe, nada foi encontrado",
+                "info": "Exibindo Página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "search": "Buscar",
+                "paginate": {
+                    "first": "Primeiro",
+                    "last": "Último",
+                    "next": " Próximo",
+                    "previous": "Anterior "
+                }
+            }
+
+        });
+    });
+</script>
+
+<table id="medidas" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var medida in Model)
+        {
+            <tr>
+                <td>@medida.Id</td>
+                <td>@medida.Nome</td>
+                <td><a class="btn btn-primary" href="/Gestao/EditarMedida/@medida.Id">Editar</a>
+
+                    <form asp-action="Deletar" asp-controller="Medidas" style="display: inline;">
+                        <input type="hidden" name="id" id="id" value="@medida.Id">
+                        <button class="btn btn-danger">Deletar</button>
+                    </form>
+
+
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

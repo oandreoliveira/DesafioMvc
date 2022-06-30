@@ -1,0 +1,11 @@
+@model ReceitasMvc.DTO.MedidaDTO
+
+<h3>Atualizar Unidade de Medida</h3>
+<hr>
+<form class="form-horizontal" asp-controller="Medidas" asp-action="Atualizar" method="POST">
+    <input type="hidden" asp-for="Id">
+    <label asp-for="Nome">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome da Unidade de Medida"><br>
+    <span asp-validation-for="Nome"></span><br>
+    <button class="btn btn-success">Atualizar</button>
+</form>
