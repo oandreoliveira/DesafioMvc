@@ -50,9 +50,6 @@ Você terá usar dois logins diferentes:
 
 
 
-<img src="/Imagens/LogoGft.png" >
-
-
 
 
 
