@@ -16,12 +16,13 @@
 
 ```bash
 
+1- No MySql, crie um banco de dados ex. NOMEDOBANCO.
 
-1- No MySql, crie um banco de dados e renomeie a string de conexao JSON na raiz do projeto com o nome do banco e suas credenciais.
+2- No arquivo appsettings.json renomeie a string de conexao JSON "DefaultConnection" com o nome do banco e suas credenciais: : "Server=localhost;DataBase=NOMEDOBANCO;port=3306;Uid=root;Pwd=root"
 
 # É necessário possuir o gerenciador de pacotes NuGet e Pomelo MySql 5.0.3
 
-2- Entre na pasta ReceitasMVC:
+3- Entre na pasta ReceitasMVC:
 
 # dotnet ef database update
 
@@ -30,11 +31,11 @@
 <hr>
 <h3># ⚙Para Acessar o Site</h3>
 
-Você terá usar dois logins diferentes:
+O sistema possui dois usuários cadastrados, com diferentes restrições por perfil:
 
-✉ admin@gft.com 🔑 Gft@1234 🔒Administrador
+✉ admin@gft.com 🔑 Gft@1234 - Perfil de Administrador
 
-✉ usuario@gft.com 🔑 Gft@1234 🔒Usuário
+✉ usuario@gft.com 🔑 Gft@1234 - Perfil de Usuário
 
 <hr>
 
@@ -47,7 +48,6 @@ Você terá usar dois logins diferentes:
 - HTML5
 - JQuery
 - JavaScript
-
 
 
 
